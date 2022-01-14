@@ -6,7 +6,7 @@ RegisterNetEvent('qb-cityhall:server:requestId', function(identityData)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local info = {}
-    if identityData.item == "id_card" then
+   if identityData.item == "id_card" then
         info.citizenid = Player.PlayerData.citizenid
         info.firstname = Player.PlayerData.charinfo.firstname
         info.lastname = Player.PlayerData.charinfo.lastname
@@ -22,6 +22,32 @@ RegisterNetEvent('qb-cityhall:server:requestId', function(identityData)
         info.firstname = Player.PlayerData.charinfo.firstname
         info.lastname = Player.PlayerData.charinfo.lastname
         info.birthdate = Player.PlayerData.charinfo.birthdate
+    elseif identityData.item == "commercial_license" then
+        info.firstname = Player.PlayerData.charinfo.firstname
+        info.lastname = Player.PlayerData.charinfo.lastname
+        info.birthdate = Player.PlayerData.charinfo.birthdate
+        info.type = "Class A Commercial License"
+    elseif identityData.item == "bike_license" then
+        info.firstname = Player.PlayerData.charinfo.firstname
+        info.lastname = Player.PlayerData.charinfo.lastname
+        info.birthdate = Player.PlayerData.charinfo.birthdate
+        info.type = "Class M Driver License"
+    elseif identityData.item == "fishinglicense" then
+        info.firstname = Player.PlayerData.charinfo.firstname
+        info.lastname = Player.PlayerData.charinfo.lastname
+        info.birthdate = Player.PlayerData.charinfo.birthdate
+        info.type = "Fishing License"
+    elseif identityData.item == "huntinglicense" then
+        info.firstname = Player.PlayerData.charinfo.firstname
+        info.lastname = Player.PlayerData.charinfo.lastname
+        info.birthdate = Player.PlayerData.charinfo.birthdate
+        info.type = "Hunting License"
+    elseif identityData.item == "pilot_license" then
+        info.firstname = Player.PlayerData.charinfo.firstname
+        info.lastname = Player.PlayerData.charinfo.lastname
+        info.birthdate = Player.PlayerData.charinfo.birthdate
+        info.type = "Private Pilots License"
+
     end
 
     Player.Functions.AddItem(identityData.item, 1, nil, info)

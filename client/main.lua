@@ -109,13 +109,33 @@ local idTypes = {
         label = "ID Card",
         item = "id_card"
     },
-    ["driver_license"] = {
-        label = "Drivers License",
-        item = "driver_license"
-    },
     ["weaponlicense"] = {
         label = "Firearms License",
         item = "weaponlicense"
+    },
+    ["huntinglicense"] = {
+        label = "Hunting License",
+        item = "huntinglicense"
+    },
+    ["fishinglicense"] = {
+        label = "Fishing License",
+        item = "fishinglicense"
+    },
+    ["commercial_license"] = {
+        label = "Commercial License",
+        item = "commercial_license"
+    },
+    ["bike_license"] = {
+        label = "Motorcycle License",
+        item = "bike_license"
+    },
+    ["driver_license"] = {
+        label = "Class C License",
+        item = "driver_license"
+    },
+    ["pilot_license"] = {
+        label = "PPL - Private Pilots License",
+        item = "pilot_license"
     }
 }
 
@@ -140,12 +160,27 @@ RegisterNUICallback('requestLicenses', function(data, cb)
             local licenseType = nil
             local label = nil
 
-            if type == "driver" then
+           if type == "driver" then
                 licenseType = "driver_license"
                 label = "Drivers Licence"
             elseif type == "weapon" then
                 licenseType = "weaponlicense"
                 label = "Firearms License"
+            elseif type == "hunting" then
+                licenseType = "huntinglicense"
+                label = "Hunting License"
+            elseif type == "fishing" then
+                licenseType = "fishinglicense"
+                label = "Fishing License"
+            elseif type == "cdl" then
+                licenseType = "commercial_license"
+                label = "Commercial License"
+            elseif type == "bike" then
+                licenseType = "bike_license"
+                label = "Motorcyle License"
+            elseif type == "pilot" then
+                licenseType = "pilot_license"
+                label = "Private Pilot"
             end
 
             availableLicenses[#availableLicenses+1] = {
